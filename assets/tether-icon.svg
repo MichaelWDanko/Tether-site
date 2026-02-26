@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1B2A"/>
+      <stop offset="100%" style="stop-color:#1B2A4A"/>
+    </linearGradient>
+    <radialGradient id="centerNodeGrad" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" style="stop-color:#4A6FA5"/>
+      <stop offset="100%" style="stop-color:#2E4A7A"/>
+    </radialGradient>
+    <radialGradient id="outerNodeGrad" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" style="stop-color:#2E4A7A"/>
+      <stop offset="100%" style="stop-color:#1B2A4A"/>
+    </radialGradient>
+    <filter id="tealGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="nodeShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="centerGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Clip circles for person silhouettes -->
+    <clipPath id="clipTL"><circle cx="321" cy="321" r="68"/></clipPath>
+    <clipPath id="clipTR"><circle cx="703" cy="321" r="68"/></clipPath>
+    <clipPath id="clipBL"><circle cx="321" cy="703" r="68"/></clipPath>
+    <clipPath id="clipBR"><circle cx="703" cy="703" r="68"/></clipPath>
+    <clipPath id="clipCenter"><circle cx="512" cy="512" r="102"/></clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="url(#bgGrad)"/>
+
+  <!-- CONNECTION LINES: center (512,512) to each corner node -->
+  <line x1="512" y1="512" x2="321" y2="321" stroke="#00C9B1" stroke-width="3" stroke-opacity="0.55" filter="url(#tealGlow)"/>
+  <line x1="512" y1="512" x2="703" y2="321" stroke="#00C9B1" stroke-width="3" stroke-opacity="0.55" filter="url(#tealGlow)"/>
+  <line x1="512" y1="512" x2="321" y2="703" stroke="#00C9B1" stroke-width="3" stroke-opacity="0.55" filter="url(#tealGlow)"/>
+  <line x1="512" y1="512" x2="703" y2="703" stroke="#00C9B1" stroke-width="3" stroke-opacity="0.55" filter="url(#tealGlow)"/>
+
+  <!-- OUTER NODE: Top-Left (321, 321) -->
+  <g filter="url(#nodeShadow)">
+    <circle cx="321" cy="321" r="70" fill="url(#outerNodeGrad)" stroke="#2E4A7A" stroke-width="2.5"/>
+    <circle cx="321" cy="321" r="70" fill="none" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.3"/>
+  </g>
+  <g clip-path="url(#clipTL)">
+    <circle cx="321" cy="304" r="21" fill="#A8B5C8" fill-opacity="0.75"/>
+    <ellipse cx="321" cy="356" rx="33" ry="23" fill="#A8B5C8" fill-opacity="0.75"/>
+  </g>
+
+  <!-- OUTER NODE: Top-Right (703, 321) -->
+  <g filter="url(#nodeShadow)">
+    <circle cx="703" cy="321" r="70" fill="url(#outerNodeGrad)" stroke="#2E4A7A" stroke-width="2.5"/>
+    <circle cx="703" cy="321" r="70" fill="none" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.3"/>
+  </g>
+  <g clip-path="url(#clipTR)">
+    <circle cx="703" cy="304" r="21" fill="#A8B5C8" fill-opacity="0.75"/>
+    <ellipse cx="703" cy="356" rx="33" ry="23" fill="#A8B5C8" fill-opacity="0.75"/>
+  </g>
+
+  <!-- OUTER NODE: Bottom-Left (321, 703) -->
+  <g filter="url(#nodeShadow)">
+    <circle cx="321" cy="703" r="70" fill="url(#outerNodeGrad)" stroke="#2E4A7A" stroke-width="2.5"/>
+    <circle cx="321" cy="703" r="70" fill="none" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.3"/>
+  </g>
+  <g clip-path="url(#clipBL)">
+    <circle cx="321" cy="686" r="21" fill="#A8B5C8" fill-opacity="0.75"/>
+    <ellipse cx="321" cy="738" rx="33" ry="23" fill="#A8B5C8" fill-opacity="0.75"/>
+  </g>
+
+  <!-- OUTER NODE: Bottom-Right (703, 703) -->
+  <g filter="url(#nodeShadow)">
+    <circle cx="703" cy="703" r="70" fill="url(#outerNodeGrad)" stroke="#2E4A7A" stroke-width="2.5"/>
+    <circle cx="703" cy="703" r="70" fill="none" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.3"/>
+  </g>
+  <g clip-path="url(#clipBR)">
+    <circle cx="703" cy="686" r="21" fill="#A8B5C8" fill-opacity="0.75"/>
+    <ellipse cx="703" cy="738" rx="33" ry="23" fill="#A8B5C8" fill-opacity="0.75"/>
+  </g>
+
+  <!-- CENTER NODE (512, 512) -->
+  <g filter="url(#centerGlow)">
+    <circle cx="512" cy="512" r="118" fill="none" stroke="#00C9B1" stroke-width="2" stroke-opacity="0.4"/>
+    <circle cx="512" cy="512" r="104" fill="url(#centerNodeGrad)" stroke="#00C9B1" stroke-width="2.5"/>
+  </g>
+  <g clip-path="url(#clipCenter)">
+    <circle cx="512" cy="488" r="30" fill="#E8EDF4" fill-opacity="0.92"/>
+    <ellipse cx="512" cy="554" rx="46" ry="32" fill="#E8EDF4" fill-opacity="0.92"/>
+  </g>
+</svg>

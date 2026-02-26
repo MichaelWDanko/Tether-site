@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tether - Stay connected to the people who matter. Visual relationship mapping for iOS.">
+    <title>Tether - Stay Connected to the People Who Matter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/tether-icon.svg" type="image/svg+xml">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Dynamic Mind Map Background -->
+        <div class="mindmap-background">
+            <svg class="mindmap-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#2E4A7A;stop-opacity:0.6"/>
+                        <stop offset="100%" style="stop-color:#1B2A4A;stop-opacity:0.4"/>
+                    </linearGradient>
+                    <filter id="glowBg">
+                        <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                        <feMerge>
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                    <filter id="lineGlow">
+                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                        <feMerge>
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                
+                <!-- Wrapper group to animate everything together -->
+                <g class="mindmap-group">
+                    <!-- Connection Lines -->
+                    <g class="connections">
+                        <line x1="200" y1="300" x2="500" y2="200" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.4" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="200" y1="300" x2="400" y2="500" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.4" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="500" y1="200" x2="800" y2="250" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.4" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="500" y1="200" x2="700" y2="400" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.4" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="800" y1="250" x2="1100" y2="300" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.4" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="800" y1="250" x2="1000" y2="500" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.4" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="1100" y1="300" x2="1400" y2="250" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.4" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="1100" y1="300" x2="1300" y2="500" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.4" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="1400" y1="250" x2="1700" y2="300" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.4" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="400" y1="500" x2="700" y2="400" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.4" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="700" y1="400" x2="1000" y2="500" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.4" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="1000" y1="500" x2="1300" y2="500" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.4" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="200" y1="300" x2="300" y2="700" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.35" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="500" y1="200" x2="600" y2="700" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.35" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="800" y1="250" x2="900" y2="750" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.35" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="1100" y1="300" x2="1200" y2="700" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.35" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="1400" y1="250" x2="1500" y2="700" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.35" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="300" y1="700" x2="600" y2="700" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.3" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="600" y1="700" x2="900" y2="750" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.3" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="900" y1="750" x2="1200" y2="700" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.3" filter="url(#lineGlow)" class="connection-line"/>
+                        <line x1="1200" y1="700" x2="1500" y2="700" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.3" filter="url(#lineGlow)" class="connection-line"/>
+                    </g>
+                    
+                    <!-- Nodes -->
+                    <g class="nodes">
+                        <circle cx="200" cy="300" r="20" fill="url(#nodeGrad)" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.4" filter="url(#glowBg)" class="node"/>
+                        <circle cx="500" cy="200" r="25" fill="url(#nodeGrad)" stroke="#00C9B1" stroke-width="2" stroke-opacity="0.5" filter="url(#glowBg)" class="node"/>
+                        <circle cx="800" cy="250" r="22" fill="url(#nodeGrad)" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.4" filter="url(#glowBg)" class="node"/>
+                        <circle cx="1100" cy="300" r="24" fill="url(#nodeGrad)" stroke="#00C9B1" stroke-width="2" stroke-opacity="0.5" filter="url(#glowBg)" class="node"/>
+                        <circle cx="1400" cy="250" r="20" fill="url(#nodeGrad)" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.4" filter="url(#glowBg)" class="node"/>
+                        <circle cx="1700" cy="300" r="18" fill="url(#nodeGrad)" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.4" filter="url(#glowBg)" class="node"/>
+                        <circle cx="400" cy="500" r="18" fill="url(#nodeGrad)" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.35" filter="url(#glowBg)" class="node"/>
+                        <circle cx="700" cy="400" r="20" fill="url(#nodeGrad)" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.4" filter="url(#glowBg)" class="node"/>
+                        <circle cx="1000" cy="500" r="19" fill="url(#nodeGrad)" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.35" filter="url(#glowBg)" class="node"/>
+                        <circle cx="1300" cy="500" r="18" fill="url(#nodeGrad)" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.35" filter="url(#glowBg)" class="node"/>
+                        <circle cx="300" cy="700" r="16" fill="url(#nodeGrad)" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.3" filter="url(#glowBg)" class="node"/>
+                        <circle cx="600" cy="700" r="17" fill="url(#nodeGrad)" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.3" filter="url(#glowBg)" class="node"/>
+                        <circle cx="900" cy="750" r="16" fill="url(#nodeGrad)" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.3" filter="url(#glowBg)" class="node"/>
+                        <circle cx="1200" cy="700" r="17" fill="url(#nodeGrad)" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.3" filter="url(#glowBg)" class="node"/>
+                        <circle cx="1500" cy="700" r="16" fill="url(#nodeGrad)" stroke="#00C9B1" stroke-width="1.5" stroke-opacity="0.3" filter="url(#glowBg)" class="node"/>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Map your relationships with <span class="app-name-highlight">Tether</span>.</h1>
+            <p class="hero-subtitle">Track the connections that matter in your life. Visualize your social network, organize by groups, and understand how the people you know relate to each other.</p>
+            <div class="hero-cta">
+                <span class="coming-soon">Coming Soon to iOS</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Everything you need to map your relationships</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">🗺️</div>
+                        <h3>Visual Relationship Map</h3>
+                    </div>
+                    <p>Drag, zoom, and explore your social network on an interactive canvas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">📁</div>
+                        <h3>Organize by Groups</h3>
+                    </div>
+                    <p>Create color-coded groups like Family, Work, and College.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">🔗</div>
+                        <h3>Connection Mapping</h3>
+                    </div>
+                    <p>Map relationships between people with labels like "married" or "siblings".</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Showcase Section -->
+    <section class="showcase">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <div class="device-frame">
+                        <div class="device-screen">
+                            <div class="mockup-screen large">
+                                <div class="mockup-header">
+                                    <div class="mockup-status-bar"></div>
+                                    <div class="mockup-search">Search people...</div>
+                                </div>
+                                <div class="mockup-content map-content">
+                                    <svg viewBox="0 0 300 400" class="showcase-map">
+                                        <!-- Multiple connection lines -->
+                                        <line x1="150" y1="200" x2="80" y2="100" stroke="#00C9B1" stroke-width="2" opacity="0.5"/>
+                                        <line x1="150" y1="200" x2="220" y2="100" stroke="#00C9B1" stroke-width="2" opacity="0.5"/>
+                                        <line x1="150" y1="200" x2="80" y2="300" stroke="#00C9B1" stroke-width="2" opacity="0.5"/>
+                                        <line x1="150" y1="200" x2="220" y2="300" stroke="#00C9B1" stroke-width="2" opacity="0.5"/>
+                                        <line x1="80" y1="100" x2="220" y2="100" stroke="#00C9B1" stroke-width="1.5" opacity="0.3"/>
+                                        <!-- Nodes with different colors -->
+                                        <circle cx="80" cy="100" r="18" fill="#2E4A7A"/>
+                                        <circle cx="220" cy="100" r="18" fill="#2E4A7A"/>
+                                        <circle cx="80" cy="300" r="18" fill="#2E4A7A"/>
+                                        <circle cx="220" cy="300" r="18" fill="#2E4A7A"/>
+                                        <circle cx="150" cy="200" r="25" fill="#00C9B1" stroke="#00C9B1" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Interactive Map View</h3>
+                    <p>Drag, zoom, and explore your relationship network</p>
+                </div>
+                <div class="showcase-item">
+                    <div class="device-frame">
+                        <div class="device-screen">
+                            <div class="mockup-screen large">
+                                <div class="mockup-header">
+                                    <div class="mockup-status-bar"></div>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="mockup-person-detail">
+                                        <div class="mockup-large-avatar">JD</div>
+                                        <div class="mockup-detail-name">John Doe</div>
+                                        <div class="mockup-detail-badge">Friend</div>
+                                        <div class="mockup-detail-section">
+                                            <div class="mockup-detail-label">Birthday</div>
+                                            <div class="mockup-detail-value">March 15</div>
+                                        </div>
+                                        <div class="mockup-detail-section">
+                                            <div class="mockup-detail-label">Connections</div>
+                                            <div class="mockup-connection-item">
+                                                <span>Jane Smith</span>
+                                                <span class="connection-label">siblings</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Person Details</h3>
+                    <p>View and edit everything about each person</p>
+                </div>
+                <div class="showcase-item">
+                    <div class="device-frame">
+                        <div class="device-screen">
+                            <div class="mockup-screen large">
+                                <div class="mockup-header">
+                                    <div class="mockup-status-bar"></div>
+                                </div>
+                                <div class="mockup-content">
+                                    <div class="mockup-person-row">
+                                        <div class="mockup-avatar">JD</div>
+                                        <div class="mockup-person-info">
+                                            <div class="mockup-name">John Doe</div>
+                                            <div class="mockup-badge-group">
+                                                <span class="mockup-badge">Friend</span>
+                                                <span class="mockup-group-badge" style="background: #00C9B1;">Family</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-person-row">
+                                        <div class="mockup-avatar">JS</div>
+                                        <div class="mockup-person-info">
+                                            <div class="mockup-name">Jane Smith</div>
+                                            <div class="mockup-badge-group">
+                                                <span class="mockup-badge">Family</span>
+                                                <span class="mockup-group-badge" style="background: #2E4A7A;">Work</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-person-row">
+                                        <div class="mockup-avatar">AB</div>
+                                        <div class="mockup-person-info">
+                                            <div class="mockup-name">Alex Brown</div>
+                                            <div class="mockup-badge-group">
+                                                <span class="mockup-badge">Colleague</span>
+                                                <span class="mockup-group-badge" style="background: #2E4A7A;">Work</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>People List</h3>
+                    <p>Searchable list with groups and relationship types</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Why Tether?</h2>
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <h3>Never lose track</h3>
+                    <p>Keep all the important people in your life organized and accessible, no matter how many life chapters you've lived.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Visual understanding</h3>
+                    <p>See your social network at a glance. Understand connections and relationships in ways a contact list never could.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Stay intentional</h3>
+                    <p>Be more mindful about the relationships you want to nurture. Track birthdays, remember important details, and stay connected.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Organize effortlessly</h3>
+                    <p>Group people from different chapters of your life — college friends, work colleagues, family — and navigate between them easily.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/tether-icon.svg" alt="Tether" class="footer-logo">
+                    <h3>Tether</h3>
+                </div>
+                <div class="footer-info">
+                    <p class="footer-status">Coming Soon to iOS</p>
+                    <p class="footer-tagline">Stay connected to the people who matter.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tether. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
