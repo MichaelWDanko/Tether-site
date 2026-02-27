@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tether - Stay connected to the people who matter. Visual relationship mapping for iOS.">
-    <title>Tether - Stay Connected to the People Who Matter</title>
+    <meta name="description" content="Tether helps you track the connections that matter in your life. Visualize your relationship network, organize people into groups, and understand how everyone relates to each other.">
+    <title>Tether – Track the Connections That Matter</title>
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://tether.michaelwdanko.com/">
+    <meta property="og:title" content="Tether – Track the Connections That Matter">
+    <meta property="og:description" content="Track the connections that matter in your life. Visualize your relationship network, organize by groups, and understand how the people you know relate to each other.">
+    <meta property="og:image" content="http://tether.michaelwdanko.com/assets/tether-og-hero.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tether – Track the Connections That Matter">
+    <meta name="twitter:description" content="Track the connections that matter in your life. Visualize your relationship network, organize by groups, and understand how the people you know relate to each other.">
+    <meta name="twitter:image" content="http://tether.michaelwdanko.com/assets/tether-og-hero.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -104,28 +117,25 @@
     <!-- Features Section -->
     <section class="features">
         <div class="container">
-            <h2 class="section-title">Everything you need to map your relationships</h2>
+            <h2 class="section-title">Tools for understanding your people</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-header">
-                        <div class="feature-icon">🗺️</div>
-                        <h3>Visual Relationship Map</h3>
+                        <h3>Relationship map</h3>
                     </div>
-                    <p>Drag, zoom, and explore your social network on an interactive canvas.</p>
+                    <p>Pan and zoom around a single view of the people you know and how they connect.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-header">
-                        <div class="feature-icon">📁</div>
-                        <h3>Organize by Groups</h3>
+                        <h3>Groups that match real life</h3>
                     </div>
-                    <p>Create color-coded groups like Family, Work, and College.</p>
+                    <p>Keep family, work, school, and other chapters of your life in separate, color-coded groups.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-header">
-                        <div class="feature-icon">🔗</div>
-                        <h3>Connection Mapping</h3>
+                        <h3>Connections, not just contacts</h3>
                     </div>
-                    <p>Map relationships between people with labels like "married" or "siblings".</p>
+                    <p>Label how people know each other (friends, married, siblings, coworkers) so the map is easy to read later.</p>
                 </div>
             </div>
         </div>
@@ -249,23 +259,23 @@
     <!-- Benefits Section -->
     <section class="benefits">
         <div class="container">
-            <h2 class="section-title">Why TETHER?</h2>
+            <h2 class="section-title">Why people use TETHER</h2>
             <div class="benefits-list">
                 <div class="benefit-item">
                     <h3>Never lose track</h3>
-                    <p>Keep all the important people in your life organized and accessible, no matter how many life chapters you've lived.</p>
+                    <p>Keep important people in one place so you don&apos;t lose touch over time.</p>
                 </div>
                 <div class="benefit-item">
                     <h3>Visual understanding</h3>
-                    <p>See your social network at a glance. Understand connections and relationships in ways a contact list never could.</p>
+                    <p>See your network laid out instead of buried in a long contact list.</p>
                 </div>
                 <div class="benefit-item">
                     <h3>Stay intentional</h3>
-                    <p>Be more mindful about the relationships you want to nurture. Track birthdays, remember important details, and stay connected.</p>
+                    <p>Be more deliberate about who you keep up with, and remember the details that matter to them.</p>
                 </div>
                 <div class="benefit-item">
                     <h3>Organize effortlessly</h3>
-                    <p>Group people from different chapters of your life — college friends, work colleagues, family — and navigate between them easily.</p>
+                    <p>Group college friends, coworkers, and family so it&apos;s easy to jump between parts of your life.</p>
                 </div>
             </div>
         </div>
@@ -281,7 +291,7 @@
                 </div>
                 <div class="footer-info">
                     <p class="footer-status">Coming Soon to iOS</p>
-                    <p class="footer-tagline">Stay connected to the people who matter.</p>
+                    <p class="footer-tagline">Track the connections that matter in your life.</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -319,8 +329,13 @@
             const fadeDuration = 200;      // ms
             const visibleDuration = 400;   // ms each word stays fully visible
 
-            function showNextWord() {
-                const nextIndex = (index + 1) % sequence.length;
+            function cycleOnce() {
+                // If we've shown the last word ("network"), stop cycling.
+                if (index >= sequence.length - 1) {
+                    return;
+                }
+
+                const nextIndex = index + 1;
 
                 el.classList.add('rotating-word--fade-out');
                 setTimeout(() => {
@@ -330,13 +345,16 @@
 
                     setTimeout(() => {
                         el.classList.remove('rotating-word--fade-in');
-                    }, fadeDuration);
 
-                    index = nextIndex;
+                        index = nextIndex;
+                        // Queue the next word in the sequence, if any remain.
+                        setTimeout(cycleOnce, visibleDuration);
+                    }, fadeDuration);
                 }, fadeDuration);
             }
 
-            setInterval(showNextWord, visibleDuration + fadeDuration * 2);
+            // Kick off the first transition in the sequence.
+            setTimeout(cycleOnce, visibleDuration + fadeDuration);
         })();
     </script>
 </body>
