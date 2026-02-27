@@ -84,7 +84,10 @@
             </svg>
         </div>
         <div class="hero-content">
-            <h1 class="hero-title">Map your relationships with <span class="app-name-highlight">Tether</span>.</h1>
+            <h1 class="hero-title">
+                Map your <span class="rotating-word">relationships</span><br>
+                with <span class="app-name-highlight">TETHER</span>.
+            </h1>
             <p class="hero-subtitle">Track the connections that matter in your life. Visualize your social network, organize by groups, and understand how the people you know relate to each other.</p>
             <div class="hero-cta">
                 <span class="coming-soon">Coming Soon to iOS</span>
@@ -240,7 +243,7 @@
     <!-- Benefits Section -->
     <section class="benefits">
         <div class="container">
-            <h2 class="section-title">Why Tether?</h2>
+            <h2 class="section-title">Why TETHER?</h2>
             <div class="benefits-list">
                 <div class="benefit-item">
                     <h3>Never lose track</h3>
@@ -268,7 +271,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <img src="assets/tether-icon.svg" alt="Tether" class="footer-logo">
-                    <h3>Tether</h3>
+                    <h3 class="app-name-footer">TETHER</h3>
                 </div>
                 <div class="footer-info">
                     <p class="footer-status">Coming Soon to iOS</p>
@@ -276,9 +279,59 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Tether. All rights reserved.</p>
+                <p>&copy; 2026 TETHER. All rights reserved.</p>
             </div>
         </div>
     </footer>
+    <script>
+        // Simple in-place word rotation for the hero line
+        (function () {
+            const el = document.querySelector('.rotating-word');
+            if (!el) return;
+
+            // Fixed sequence: user sees every word, always ending on "network"
+            const sequence = [
+                'neighbors',
+                'friends',
+                'classmates',
+                'roommates',
+                'community',
+                'partners',
+                'vendors',
+                'teachers',
+                'coaches',
+                'members',
+                'sponsors',
+                'network'
+            ];
+
+            let index = 0;
+
+            // Start on the first word in the sequence
+            el.textContent = sequence[0];
+
+            const fadeDuration = 200;      // ms
+            const visibleDuration = 400;   // ms each word stays fully visible
+
+            function showNextWord() {
+                const nextIndex = (index + 1) % sequence.length;
+
+                el.classList.add('rotating-word--fade-out');
+                setTimeout(() => {
+                    el.textContent = sequence[nextIndex];
+                    el.classList.remove('rotating-word--fade-out');
+                    el.classList.add('rotating-word--fade-in');
+
+                    setTimeout(() => {
+                        el.classList.remove('rotating-word--fade-in');
+                    }, fadeDuration);
+
+                    index = nextIndex;
+                }, fadeDuration);
+            }
+
+            setInterval(showNextWord, visibleDuration + fadeDuration * 2);
+        })();
+    </script>
 </body>
 </html>
